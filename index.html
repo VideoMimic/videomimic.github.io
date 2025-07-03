@@ -6,12 +6,31 @@
   <link rel="icon" href="./figs/logo.png" type="image/png">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    .additional-video-row {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .additional-video-item {
+      height: 220px;
+      width: auto;
+      border-radius: 15px;
+      background-color: #000;
+    }
+    #input-video-cropped {
+      width: 350px; /* Controls the visible width */
+      object-fit: cover; /* Crops the video to fit the width */
+    }
+  </style>
 </head>
 <body>
   <div class="toc">
     <h3>Content</h3>
     <hr>
     <ul>
+      <li><a href="#additional-video">Additional Video</a></li>
       <li><a href="#abstract">Abstract</a></li>
       <li><a href="#deploy-in-real">Real-world Demo</a></li>
       <li><a href="#approach">Approach</a></li>
@@ -38,6 +57,20 @@
         <span style="font-variant: small-caps;">VideoMimic</span> is a real-to-sim-to-real pipeline that converts monocular videos into transferable humanoid skills, letting robots learn context-aware behaviors (terrain-traversing, climbing, sitting) in a single policy.
     </p>
 
+    <div class="tagline" id="additional-video">Additional Video.</div>
+    <div class="additional-video-row">
+        <video id="input-video-cropped" class="additional-video-item" src="input.mp4" autoplay muted playsinline loop></video>
+        <video class="additional-video-item" src="3d.mp4" autoplay muted playsinline loop></video>
+        <video class="additional-video-item" src="rl.mp4" autoplay muted playsinline loop></video>
+    </div>
+    <div class="r2s-caption-row" style="margin-top: 10px;">
+        <p class="r2s-caption-item">(a) input video</p>
+        <p class="r2s-caption-item">(b) reconstructed environment and human</p>
+        <p class="r2s-caption-item">(c) tracking the motion in sim</p>
+    </div>
+    <p class="figure-caption">
+      We conducted additional experiments to track an internet video of a person crawling down the stairs. This shows our pipeline's ability to learn from scalable web data, and also it's ability to learn diverse motions.
+    </p>
     
     <div class="tagline" id="abstract">Abstract.</div>
 
